@@ -242,6 +242,9 @@ aside {
   position: absolute;
   top: 24px;
   left: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
   padding: 12px;
   border-radius: 50%;
