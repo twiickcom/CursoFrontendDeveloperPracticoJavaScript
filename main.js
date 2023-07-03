@@ -22,3 +22,62 @@ function desactivar(element, element2){
         element.classList.add("inactive");
     }
 }
+
+// Cards 
+
+const cardsContainer=document.querySelector(".cards-container");
+
+const productList=[];
+
+productList.push({
+    name: "Bike",
+    price:120,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+});
+
+productList.push({
+    name: "Pantalla",
+    price:320,
+    image: "https://images.pexels.com/photos/1714340/pexels-photo-1714340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+});
+
+productList.push({
+    name: "Computador",
+    price:220,
+    image: "https://images.pexels.com/photos/3999538/pexels-photo-3999538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+});
+
+function renderProducts(){
+    for(product of productList){
+        const productCard=crear("div");
+        productCard.classList.add("product-card");
+        const productImg=crear("img");
+        productImg.setAttribute("src",product.image);
+        const productInfo=crear("div");
+        productInfo.classList.add("product-info");
+        const productInfoDiv=crear("div");
+        const productPrice=crear("p");
+        productPrice.innerText="$"+product.price;
+        const productName=crear("p");
+        productName.innerText=product.name;
+        const productInfoFigure=crear("figure");
+        const productImgCart=crear("img");
+        
+        productCard.appendChild(productImg);
+        productCard.appendChild(productInfo);
+        productInfo.appendChild(productInfoDiv);
+        productInfoDiv.appendChild(productPrice);
+        productInfoDiv.appendChild(productName);
+        productInfo.appendChild(productInfoFigure); 
+        productInfoFigure.appendChild(productImgCart);
+        productImgCart.setAttribute("src", "./icons/bt_add_to_cart.svg");
+
+        cardsContainer.appendChild(productCard);
+    }
+}
+
+function crear(elemento){
+    return document.createElement(elemento);
+}
+
+renderProducts();
