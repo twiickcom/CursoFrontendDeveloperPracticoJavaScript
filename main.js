@@ -4,16 +4,16 @@ const menuHamIcon=document.querySelector(".menu")
 const mobileMenu=document.querySelector(".mobile-menu")
 
 const menuCarritoIcon=document.querySelector(".navbar-shopping-cart");
-const aside=document.querySelector(".product-detail");
+const shoppingCartContainer=document.querySelector("#shopping-cart");
 
 menuEmail.addEventListener("click", function(){toogle(desktopMenu)});
 menuHamIcon.addEventListener("click", function(){toogle(mobileMenu)});
-menuCarritoIcon.addEventListener("click", function(){toogle(aside)});
+menuCarritoIcon.addEventListener("click", function(){toogle(shoppingCartContainer)});
 
 function toogle(element){
     desactivar(desktopMenu, element);
     desactivar(mobileMenu, element);
-    desactivar(aside, element);
+    desactivar(shoppingCartContainer, element);
    element.classList.toggle("inactive");
 }
 
